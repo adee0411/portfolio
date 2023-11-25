@@ -1,18 +1,16 @@
 import { Twirl as Hamburger } from "hamburger-react";
 
-const HamburgerContainer = ({
-  isHamburgerToggled,
-  setIsHamburgerToggled,
-  color,
-}) => {
+const HamburgerContainer = ({ toggle, toggled, color }) => {
   return (
-    <Hamburger
-      direction="left"
-      toggle={setIsHamburgerToggled}
-      toggled={isHamburgerToggled}
-      size={24}
-      color={color}
-    />
+    <button>
+      <Hamburger
+        direction="left"
+        toggle={toggle}
+        toggled={toggled}
+        size={24}
+        color={color}
+      />
+    </button>
   );
 };
 

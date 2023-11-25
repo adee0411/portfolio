@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 import HTMLIcon from "../../icons/html_icon.png";
 import CSSIcon from "../../icons/css_icon.png";
 import JSIcon from "../../icons/js_icon.png";
 import SassIcon from "../../icons/sass_icon.png";
-import ReactIcon from "../../icons/react_icon.png";
+import ReactIcon from "../../icons/react_icon_no-bg.png";
 import TailwindIcon from "../../icons/tailwind_icon.png";
 import MuiIcon from "../../icons/mui_icon.png";
 import NodeIcon from "../../icons/node_icon.png";
@@ -12,9 +14,58 @@ import VsCodeIcon from "../../icons/vs_code_icon.png";
 import FirebaseIcon from "../../icons/firebase_icon.png";
 import ProgrammingImage from "../../images/programming.svg";
 
+import StackCard from "../StackCard";
+
+const stackList = [
+  {
+    url: HTMLIcon,
+    stackName: "HTML5",
+  },
+  {
+    url: CSSIcon,
+    stackName: "CSS3",
+  },
+  {
+    url: JSIcon,
+    stackName: "Js (ES6+)",
+  },
+  {
+    url: ReactIcon,
+    stackName: "React",
+  },
+  {
+    url: TailwindIcon,
+    stackName: "Tailwind CSS",
+  },
+  {
+    url: MuiIcon,
+    stackName: "Joy UI",
+  },
+  {
+    url: NodeIcon,
+    stackName: "Node Js",
+  },
+  {
+    url: ApiIcon,
+    stackName: "REST API",
+  },
+  {
+    url: GithubIcon,
+    stackName: "Github",
+  },
+  {
+    url: VsCodeIcon,
+    stackName: "VS Code",
+  },
+  {
+    url: FirebaseIcon,
+    stackName: "Firebase DB",
+  },
+];
+
 const Skills = () => {
   return (
-    <section id="skills">
+    <section id="skills" className="my-10">
       <header className="mb-6">
         <h2>
           <span className="inline-block relative text-3xl font-bold uppercase after:block after:absolute after:top-2/4 after:-translate-y-1/2 after:-right-10 after:w-8 after:h-1 after:bg-emerald-300">
@@ -23,96 +74,18 @@ const Skills = () => {
         </h2>
       </header>
       <div>
+        <p className="text-light text-slate-400 mb-10">
+          Stack listám, amikkel eddig foglalkoztam.
+          <br />A fejlesztés számomra önmagam fejlesztését is jelenti, így
+          folyamatosan teszek azért, hogy tudásom mélyüljön és bővüljön
+        </p>
         <div className="">
-          <div className="">
-            <ul className="flex gap-6 flex-wrap">
-              <li className="flex align-middle gap-2 text-sm font-light border border-emerald-300 rounded-md px-3 py-2 ">
-                <div className="w-5 flex place-items-center">
-                  <img src={HTMLIcon} />
-                </div>
-                <h3>HTML5</h3>
-              </li>
-              <li className="flex align-middle gap-2 text-sm font-light border border-emerald-300 rounded-md px-3 py-2 ">
-                <div className="w-5 flex place-items-center">
-                  <img src={CSSIcon} />
-                </div>
-                <h3>CSS3</h3>
-              </li>
-              <li className="flex align-middle gap-2 text-sm font-light border border-emerald-300 rounded-md px-3 py-2 ">
-                <div className="w-5 flex place-items-center">
-                  <img src={JSIcon} />
-                </div>
-                <h3>JS (ES6+)</h3>
-              </li>
-              <li className="flex align-middle gap-2 text-sm font-light border border-emerald-300 rounded-md px-3 py-2 ">
-                <div className="w-5 flex place-items-center">
-                  <img src={SassIcon} />
-                </div>
-                <h3>Sass</h3>
-              </li>
-              <li className="flex align-middle gap-2 text-sm font-light border border-emerald-300 rounded-md px-3 py-2 ">
-                <div className="w-5 flex place-items-center">
-                  <img src={ReactIcon} />
-                </div>
-                <h3>React</h3>
-              </li>
-              <li className="flex align-middle gap-2 text-sm font-light border border-emerald-300 rounded-md px-3 py-2 ">
-                <div className="w-5 flex place-items-center">
-                  <img src={TailwindIcon} />
-                </div>
-                <h3>Tailwind CSS</h3>
-              </li>
-              <li className="flex align-middle gap-2 text-xs font-light border border-emerald-300 rounded-md px-3 py-2 ">
-                <div className="w-3 flex place-items-center">
-                  <img src={MuiIcon} />
-                </div>
-                <h3>Joy UI</h3>
-              </li>
-              <li className="flex align-middle gap-2 text-xs font-light border border-emerald-300 rounded-md px-3 py-2 ">
-                <div className="w-3 flex place-items-center">
-                  <img src={NodeIcon} />
-                </div>
-                <h3>Node JS</h3>
-              </li>
-              <li className="flex align-middle gap-2 text-xs font-light border border-emerald-300 rounded-md px-3 py-2 ">
-                <div className="w-3 flex place-items-center">
-                  <img src={ApiIcon} />
-                </div>
-                <h3>REST API</h3>
-              </li>
-              <li className="flex align-middle gap-2 text-xs font-light border border-emerald-300 rounded-md px-3 py-2 ">
-                <div className="w-3 flex place-items-center">
-                  <img src={GithubIcon} />
-                </div>
-                <h3>Github</h3>
-              </li>
-              <li className="flex align-middle gap-2 text-xs font-light border border-emerald-300 rounded-md px-3 py-2 ">
-                <div className="w-3 flex place-items-center">
-                  <img src={VsCodeIcon} />
-                </div>
-                <h3>VS Code</h3>
-              </li>
-              <li className="flex align-middle gap-2 text-xs font-light border border-emerald-300 rounded-md px-3 py-2 ">
-                <div className="w-3 flex place-items-center">
-                  <img src={FirebaseIcon} />
-                </div>
-                <h3>Firebase</h3>
-              </li>
-            </ul>
-          </div>
+          <ul className="grid grid-cols-3 gap-6">
+            {stackList.map((stack) => {
+              return <StackCard icon={stack.url} stackName={stack.stackName} />;
+            })}
+          </ul>
         </div>
-        {/**
-        <div className="flex flex-wrap child:w-8 gap-1">
-          <img src={SassIcon} />
-          <img src={ReactIcon} />
-          <img src={TailwindIcon} />
-          <img src={MuiIcon} />
-          <img src={NodeIcon} />
-          <img src={ApiIcon} />
-          <img src={GithubIcon} />
-          <img src={VsCodeIcon} />
-          <img src={FirebaseIcon} />
-        </div> */}
       </div>
     </section>
   );

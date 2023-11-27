@@ -1,4 +1,4 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, Link } from "react-router-dom";
 
 import Logo from "../components/Logo";
 import HamburgerContainer from "../components/HamburgerContainer";
@@ -7,12 +7,12 @@ import { useState } from "react";
 const RootLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="relative">
-      <header className="p-5">
+    <div className="relative w-4/5 mx-auto max-w-screen-xl">
+      <header className="py-5">
         <nav className="flex justify-between align-middle">
-          <div>
+          <Link to="/">
             <Logo variant="light" />
-          </div>
+          </Link>
           {/** MAIN NAV */}
           <div
             className={`px-5 pt-5 absolute ${isOpen ? "top-0" : "-top-96"} 
@@ -69,7 +69,7 @@ const RootLayout = () => {
           </div>
         </nav>
       </header>
-      <main className="text-slate-300 px-10">
+      <main className="text-slate-300">
         <Outlet />
       </main>
     </div>

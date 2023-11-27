@@ -1,5 +1,12 @@
+import SectionWrapper from "../../UI/SectionWrapper";
+import MainProjects from "../../components/MainProjects";
+
 const ProjectsPage = () => {
-  return <h1>Projects</h1>;
+  return (
+    <SectionWrapper sectionID="main-projects" sectionTitle="Projektjeim">
+      <MainProjects />
+    </SectionWrapper>
+  );
 };
 
 export default ProjectsPage;

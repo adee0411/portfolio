@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 import HTMLIcon from "../../icons/html_icon.png";
 import CSSIcon from "../../icons/css_icon.png";
@@ -13,8 +13,10 @@ import GithubIcon from "../../icons/github_icon_light.png";
 import VsCodeIcon from "../../icons/vs_code_icon.png";
 import FirebaseIcon from "../../icons/firebase_icon.png";
 import ProgrammingImage from "../../images/programming.svg";
+import FramerMotionIcon from "../../icons/framer-motion_icon.png";
 
 import StackCard from "../StackCard";
+import SectionWrapper from "../../UI/SectionWrapper";
 
 const stackList = [
   {
@@ -61,18 +63,15 @@ const stackList = [
     url: FirebaseIcon,
     stackName: "Firebase DB",
   },
+  {
+    url: FramerMotionIcon,
+    stackName: "Framer Motion",
+  },
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="my-10">
-      <header className="mb-6">
-        <h2>
-          <span className="inline-block relative text-3xl font-bold uppercase after:block after:absolute after:top-2/4 after:-translate-y-1/2 after:-right-10 after:w-8 after:h-1 after:bg-emerald-300">
-            stack
-          </span>
-        </h2>
-      </header>
+    <SectionWrapper sectionID="skills" sectionTitle="Stack">
       <div>
         <p className="text-light text-slate-400 mb-10">
           Stack listám, amikkel eddig foglalkoztam.
@@ -80,14 +79,14 @@ const Skills = () => {
           folyamatosan teszek azért, hogy tudásom mélyüljön és bővüljön
         </p>
         <div className="">
-          <ul className="grid grid-cols-3 gap-6">
+          <motion.ul className="grid grid-cols-3 gap-6">
             {stackList.map((stack) => {
               return <StackCard icon={stack.url} stackName={stack.stackName} />;
             })}
-          </ul>
+          </motion.ul>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 };
 

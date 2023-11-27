@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import { IoLogoGithub } from "react-icons/io";
 
 const ProjectCard = ({
   projectName,
@@ -9,6 +11,8 @@ const ProjectCard = ({
   url,
   stackList,
   featureList,
+  githubURL,
+  liveURL,
 }) => {
   return (
     <div className=" border-b border-b-slate-700 py-8">
@@ -33,7 +37,7 @@ const ProjectCard = ({
           })}
         </ul>
       </div>
-      <div className="my-2">
+      <div className="my-8">
         <h5 className="mb-2">Feature:</h5>
         <ul className="font-light mb-4">
           {featureList.map((feature) => {
@@ -45,10 +49,29 @@ const ProjectCard = ({
           })}
         </ul>
       </div>
-      <Link to={url} className="text-emerald-300">
-        Bővebben a projektről{" "}
-        <IoIosArrowRoundForward className="inline-block" />
-      </Link>
+      {/** Links to resurces */}
+      <div className="flex justify-between items-center">
+        <Link
+          to={url}
+          className="text-slate-800 py-2 px-4 rounded-md bg-emerald-300 text-sm"
+        >
+          Bővebben <IoIosArrowRoundForward className="inline-block" />
+        </Link>
+        <div className="flex gap-8 text-emerald-300 text-sm">
+          <Link
+            to={githubURL}
+            target="_blank"
+            className="flex items-center gap-2"
+          >
+            <IoLogoGithub />
+            Forráskód
+          </Link>
+          <Link to={liveURL} className="flex items-center gap-2">
+            <FaExternalLinkAlt />
+            Demo
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
